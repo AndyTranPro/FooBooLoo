@@ -1,0 +1,9 @@
+List of testing commands:
+  - Running all the tests:
+    dotnet test FooBooLooGameAPI.Tests.csproj
+
+  - Running all tests and collect all coverage:
+    dotnet test FooBooLooGameAPI.Tests.csproj --collect:"XPlat Code Coverage" --settings .\coverage.runsettings
+
+  - Generating the coverage report:
+    reportgenerator -reports:TestResults/*/coverage.cobertura.xml -targetdir:coverage-report
