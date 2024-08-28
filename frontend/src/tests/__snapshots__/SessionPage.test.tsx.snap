@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SessionPage Component renders correctly and matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      Mocked Session
+    </div>
+  </div>
+</DocumentFragment>
+`;

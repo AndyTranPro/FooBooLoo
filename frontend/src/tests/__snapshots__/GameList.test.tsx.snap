@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameList Component renders correctly and matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-164r41r"
+  >
+    <h4
+      class="MuiTypography-root MuiTypography-h4 css-7krbx2-MuiTypography-root"
+    >
+      Available Games
+    </h4>
+    <ul
+      class="MuiList-root MuiList-padding css-msdf42-MuiList-root"
+    >
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1raylp1-MuiListItem-root"
+      >
+        <a
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-wd7l82-MuiButtonBase-root-MuiButton-root"
+          href="/games/1"
+          tabindex="0"
+        >
+          Game 1
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </a>
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1raylp1-MuiListItem-root"
+      >
+        <a
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-wd7l82-MuiButtonBase-root-MuiButton-root"
+          href="/games/2"
+          tabindex="0"
+        >
+          Game 2
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
