@@ -8,6 +8,7 @@ using Npgsql;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+//builder.WebHost.UseUrls("http://*:80");
 
 // Create a single instance of NpgsqlDataSourceBuilder
 var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("DefaultConnection"));

@@ -7141,11 +7141,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\CSharp_project\\code-fixing\\FooBooLooGameAPI.Tests\\FooBooLooGameAPI.Tests.csproj",
+      "projectUniqueName": "F:\\CSharp_project\\FizzBuzz\\backend\\FooBooLooGameAPI.Tests\\FooBooLooGameAPI.Tests.csproj",
       "projectName": "FooBooLooGameAPI.Tests",
-      "projectPath": "F:\\CSharp_project\\code-fixing\\FooBooLooGameAPI.Tests\\FooBooLooGameAPI.Tests.csproj",
+      "projectPath": "F:\\CSharp_project\\FizzBuzz\\backend\\FooBooLooGameAPI.Tests\\FooBooLooGameAPI.Tests.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "F:\\CSharp_project\\code-fixing\\FooBooLooGameAPI.Tests\\obj\\",
+      "outputPath": "F:\\CSharp_project\\FizzBuzz\\backend\\FooBooLooGameAPI.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7167,8 +7167,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\CSharp_project\\code-fixing\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj": {
-              "projectPath": "F:\\CSharp_project\\code-fixing\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj"
+            "F:\\CSharp_project\\FizzBuzz\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj": {
+              "projectPath": "F:\\CSharp_project\\FizzBuzz\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj"
             }
           }
         }
