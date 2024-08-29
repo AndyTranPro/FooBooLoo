@@ -24,7 +24,7 @@ export interface GamesState {
 // The initial state of the games slice
 const initialState: GamesState = {
     games: [],
-    status: 'idle',
+    status: 'idle'
 };
 
 // fetches the list of games from the server

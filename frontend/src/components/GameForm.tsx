@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../features/store';
+import { useAppDispatch, useAppSelector } from '../features/store';
 import { addGame } from '../features/gamesSlice';
-import { TextField, Button, Box, Grid, Typography } from '@mui/material';
+import { TextField, Button, Box, Grid, Typography, Alert } from '@mui/material';
 
 const GameForm: React.FC = () => {
     const [name, setName] = useState('');
+    const games = useAppSelector((state) => state.games.games);
     const [author, setAuthor] = useState('');
     const [min, setMin] = useState<number | string>(0);
     const [max, setMax] = useState<number | string>(100);
@@ -16,6 +17,7 @@ const GameForm: React.FC = () => {
         max: false,
         rules: [] as boolean[]
     });
+    const [submitError, setSubmitError] = useState<string | null>(null);
     const dispatch = useAppDispatch();
 
     const handleAddRule = () => {
@@ -25,6 +27,16 @@ const GameForm: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        // check if the name already exists
+        const existingGame = games.find(game => game.name === name);
+        if (existingGame) {
+            setSubmitError('Game already exists. Please choose a different name.');
+            return;
+        } else {
+            setSubmitError(null);
+        }
+
+        e.preventDefault();
         const newErrors = {
             name: !name,
             author: !author,
@@ -33,21 +45,26 @@ const GameForm: React.FC = () => {
             rules: rules.map(rule => !rule.divisor || !rule.replacement)
         };
         setErrors(newErrors);
-
+    
         if (Object.values(newErrors).some(error => error === true || (Array.isArray(error) && error.some(e => e)))) {
             return;
         }
-
+    
         const formattedRules = rules.map(rule => ({
             divisor: parseInt(rule.divisor),
             replacement: rule.replacement
         }));
-
+    
         await dispatch(addGame({ name, author, min: Number(min), max: Number(max), rules: formattedRules }));
     };
 
     return (
         <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            {submitError && (
+                <Alert severity="error" sx={{ mb: 2 }}>
+                    {submitError}
+                </Alert>
+            )}
             <Typography
                 variant="h4"
                 gutterBottom

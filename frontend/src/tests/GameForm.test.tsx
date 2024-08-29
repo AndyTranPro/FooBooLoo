@@ -5,11 +5,12 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import GameForm from '../components/GameForm';
 import { addGame } from '../features/gamesSlice';
-import { useAppDispatch } from '../features/store';
+import { useAppDispatch, useAppSelector } from '../features/store';
 
 // Mock the useAppDispatch hook and addGame action
 jest.mock('../features/store', () => ({
     useAppDispatch: jest.fn(),
+    useAppSelector: jest.fn(),
 }));
 
 jest.mock('../features/gamesSlice', () => ({
@@ -18,8 +19,8 @@ jest.mock('../features/gamesSlice', () => ({
 
 const mockStore = configureStore([]);
 
-const renderComponent = () => {
-    const store = mockStore({});
+const renderComponent = (initialState = {}) => {
+    const store = mockStore(initialState);
     return render(
         <Provider store={store}>
             <GameForm />
@@ -28,6 +29,12 @@ const renderComponent = () => {
 };
 
 describe('GameForm Component', () => {
+    beforeEach(() => {
+        (useAppSelector as jest.Mock).mockImplementation((selector) => selector({
+            games: { games: [{ name: 'Existing Game', author: 'Jane Doe', min: 1, max: 10, rules: [] }] }
+        }));
+    });
+
     test('renders correctly with all form fields', () => {
         renderComponent();
 
@@ -105,20 +112,33 @@ describe('GameForm Component', () => {
 
         expect(mockDispatch).not.toHaveBeenCalled();
     });
-    
+
     test('shows error messages for invalid form fields', () => {
-      renderComponent();
+        renderComponent();
 
-      fireEvent.change(screen.getByLabelText(/Game Name/i), { target: { value: '' } });
-      fireEvent.change(screen.getByLabelText(/Author/i), { target: { value: '' } });
-      fireEvent.change(screen.getByLabelText(/Min/i), { target: { value: '' } });
-      fireEvent.change(screen.getByLabelText(/Max/i), { target: { value: '' } });
+        fireEvent.change(screen.getByLabelText(/Game Name/i), { target: { value: '' } });
+        fireEvent.change(screen.getByLabelText(/Author/i), { target: { value: '' } });
+        fireEvent.change(screen.getByLabelText(/Min/i), { target: { value: '' } });
+        fireEvent.change(screen.getByLabelText(/Max/i), { target: { value: '' } });
 
-      fireEvent.submit(screen.getByRole('button', { name: /Create Game/i }));
+        fireEvent.submit(screen.getByRole('button', { name: /Create Game/i }));
 
-      expect(screen.getByText(/Game Name is required/i)).toBeInTheDocument();
-      expect(screen.getByText(/Author is required/i)).toBeInTheDocument();
-      expect(screen.getByText(/Min is required/i)).toBeInTheDocument();
-      expect(screen.getByText(/Max is required/i)).toBeInTheDocument();
-  });
+        expect(screen.getByText(/Game Name is required/i)).toBeInTheDocument();
+        expect(screen.getByText(/Author is required/i)).toBeInTheDocument();
+        expect(screen.getByText(/Min is required/i)).toBeInTheDocument();
+        expect(screen.getByText(/Max is required/i)).toBeInTheDocument();
+    });
+
+    test('shows error message when game name already exists', () => {
+        renderComponent();
+
+        fireEvent.change(screen.getByLabelText(/Game Name/i), { target: { value: 'Existing Game' } });
+        fireEvent.change(screen.getByLabelText(/Author/i), { target: { value: 'John Doe' } });
+        fireEvent.change(screen.getByLabelText(/Min/i), { target: { value: '10' } });
+        fireEvent.change(screen.getByLabelText(/Max/i), { target: { value: '100' } });
+
+        fireEvent.submit(screen.getByRole('button', { name: /Create Game/i }));
+
+        expect(screen.getByText(/Game already exists. Please choose a different name./i)).toBeInTheDocument();
+    });
 });
