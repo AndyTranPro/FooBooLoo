@@ -1,4 +1,5 @@
 using FooBooLooGameAPI.Data;
+using FooBooLooGameAPI.Extensions;
 using FooBooLooGameAPI.Interfaces;
 using FooBooLooGameAPI.Repositories;
 using FooBooLooGameAPI.Services;
@@ -63,6 +64,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ApplyMigrations();
 }
 
 app.UseHttpsRedirection();

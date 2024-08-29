@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   db:
@@ -12,17 +12,22 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./backend/FooBooLooGameAPI/init/setup.sql:/docker-entrypoint-initdb.d/setup.sql
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "5054:8080"
+      - "5054:80"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Host=db;Database=foobooloo-db;Username=postgres;Password=postgres

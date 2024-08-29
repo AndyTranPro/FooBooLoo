@@ -2,19 +2,18 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
-# Copy the project files
-COPY ./FooBooLooGameAPI/*.csproj ./FooBooLooGameAPI/
-COPY ./FooBooLooGameAPI.Tests/*.csproj ./FooBooLooGameAPI.Tests/
-COPY ./FooBooLoo.sln ./
+# Copy the solution file and project files
+COPY FooBooLoo.sln .
+COPY FooBooLooGameAPI/FooBooLooGameAPI.csproj FooBooLooGameAPI/
+COPY FooBooLooGameAPI.Tests/FooBooLooGameAPI.Tests.csproj FooBooLooGameAPI.Tests/
 
 # Restore dependencies
-RUN dotnet restore FooBooLoo.sln
+RUN dotnet restore
 
 # Copy the rest of the application code
-COPY ./FooBooLooGameAPI/. ./FooBooLooGameAPI/
-COPY ./FooBooLooGameAPI.Tests/. ./FooBooLooGameAPI.Tests/
+COPY . . 
 
-# Publish the application
+# Build and publish the application
 RUN dotnet publish FooBooLooGameAPI/FooBooLooGameAPI.csproj -c Release -o out
 
 # Use the official ASP.NET Core runtime image
