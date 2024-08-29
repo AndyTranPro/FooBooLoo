@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xmOIkYdG3kZuUlEBPPyJpdQNmdrfi2wJwCQLK10cw3FZhL417kb3XRHpZru/doR+PpbgpMcc4ExLG67FjxsFKQ==",
+  "dgSpecHash": "kK1QCh3ARujpjbkoRfyUdUIvEWBvKPdVADULUF4soGmBZapP7Ei42tmdDp74r7bfER311OOuXif7U7I4ccq5cA==",
   "success": true,
-  "projectFilePath": "F:\\CSharp_project\\FizzBuzz\\backend\\FooBooLooGameAPI.Tests\\FooBooLooGameAPI.Tests.csproj",
+  "projectFilePath": "F:\\CSharp_project\\hh\\FizzBizz\\backend\\FooBooLooGameAPI.Tests\\FooBooLooGameAPI.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
