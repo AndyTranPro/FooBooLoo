@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\CSharp_project\\hh\\FizzBizz\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj": {}
+    "F:\\CSharp_project\\hh\\FooBooLoo\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj": {}
   },
   "projects": {
-    "F:\\CSharp_project\\hh\\FizzBizz\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj": {
+    "F:\\CSharp_project\\hh\\FooBooLoo\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CSharp_project\\hh\\FizzBizz\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj",
+        "projectUniqueName": "F:\\CSharp_project\\hh\\FooBooLoo\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj",
         "projectName": "FooBooLooGameAPI",
-        "projectPath": "F:\\CSharp_project\\hh\\FizzBizz\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj",
+        "projectPath": "F:\\CSharp_project\\hh\\FooBooLoo\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\CSharp_project\\hh\\FizzBizz\\backend\\FooBooLooGameAPI\\obj\\",
+        "outputPath": "F:\\CSharp_project\\hh\\FooBooLoo\\backend\\FooBooLooGameAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

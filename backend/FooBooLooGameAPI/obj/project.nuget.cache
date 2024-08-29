@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N71PXu9Uz2LzIWqFFCCYKK27qYZTi09vt3XtJDi4Rt8P3mgvEycTPZ2hLCbJ93NIIKHbb7lwPIOHLyAzrHrIGg==",
+  "dgSpecHash": "9QeMMUwsx+I4ZmyNpY8tvbMnD2luYXw0jsbJ+FSB0OoZBbxS23LkX6RkDkpF3CWFmIf31lCTkvEdr5X8C6NWaA==",
   "success": true,
-  "projectFilePath": "F:\\CSharp_project\\hh\\FizzBizz\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj",
+  "projectFilePath": "F:\\CSharp_project\\hh\\FooBooLoo\\backend\\FooBooLooGameAPI\\FooBooLooGameAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
